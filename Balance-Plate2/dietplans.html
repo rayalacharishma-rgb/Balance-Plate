@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diet Plans | Balance-Plate</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dietplans">
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html"><i class="fas fa-leaf"></i> <span data-i18n="nav.brandAlt">Balance-Plate</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav.home">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="dietplans.html" data-i18n="nav.dietPlans">Diet Plans</a></li>
+          <li class="nav-item"><a class="nav-link" href="workout.html" data-i18n="nav.workout">Workout Tracker</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html" data-i18n="nav.login">Login</a></li>
+          <li class="nav-item"><button class="btn btn-theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 data-i18n="diet.title">Diet Plans</h1>
+      <p data-i18n="diet.subtitle">Choose a plan that fits your health and fitness goals</p>
+      <div class="search-box compact">
+        <i class="fas fa-search"></i>
+        <input type="text" id="dietSearch" class="form-control" data-i18n-placeholder="diet.searchPlaceholder" placeholder="Search diet plans...">
+      </div>
+    </div>
+  </header>
+
+  <main class="section-padding">
+    <div class="container">
+      <div class="row g-3 mb-4" id="dietPlanTabs"></div>
+      <div id="dietPlanDetails"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container text-center"><p data-i18n="footer.copyShort">&copy; 2026 Balance-Plate</p></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/diet-data.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/integrate-features.js"></script>
+</body>
+</html>

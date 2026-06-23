@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Balance-plate| Healthy Eating Made Simple</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <i class="fas fa-leaf"></i> <span data-i18n="nav.brand">Balance-Plate</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link active" href="index.html" data-i18n="nav.home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="dietplans.html" data-i18n="nav.dietPlans">Diet Plans</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#nutrition-guide" data-i18n="nav.nutritionGuide">Nutrition Guide</a></li>
+          <li class="nav-item"><a class="nav-link" href="workout.html" data-i18n="nav.workout">Workout Tracker</a></li>
+          <li class="nav-item"><a class="nav-link" href="register.html" data-i18n="nav.register">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html" data-i18n="nav.login">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
+          <li class="nav-item">
+            <button class="btn btn-theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+              <i class="fas fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container hero-content animate-fade-in">
+      <h1 class="hero-title"><span data-i18n="home.heroTitle">Welcome to</span> <span class="text-gradient" data-i18n="home.heroBrand">Balanced-Plate</span></h1>
+      <p class="hero-subtitle" data-i18n="home.heroSubtitle">Discover personalized nutrition, balanced meal plans, and tools to fuel a healthier lifestyle.</p>
+      <div class="hero-actions">
+        <a href="register.html" class="btn btn-primary-custom btn-lg" data-i18n="home.getStarted">Get Started</a>
+        <a href="dietplans.html" class="btn btn-outline-custom btn-lg" data-i18n="home.exploreDiet">Explore Diet Plans</a>
+      </div>
+      <div class="search-box mt-4">
+        <i class="fas fa-search"></i>
+        <input type="text" id="globalSearch" class="form-control" data-i18n-placeholder="home.searchPlaceholder" placeholder="Search diet plans, food items, nutrition details...">
+        <div id="searchResults" class="search-results"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Importance of Healthy Eating -->
+  <section class="section-padding" id="about">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <h2 class="section-title" data-i18n="home.whyTitle">Why Healthy Eating Matters</h2>
+          <p class="section-text" data-i18n="home.whyText">A nutritious diet fuels your body, strengthens immunity, and reduces the risk of chronic diseases. Balance-Plate helps you make informed food choices tailored to your goals.</p>
+          <ul class="benefit-list">
+            <li><i class="fas fa-check-circle"></i> <span data-i18n="home.benefit1">More energy throughout the day</span></li>
+            <li><i class="fas fa-check-circle"></i> <span data-i18n="home.benefit2">Better mood and mental clarity</span></li>
+            <li><i class="fas fa-check-circle"></i> <span data-i18n="home.benefit3">Stronger bones and muscles</span></li>
+            <li><i class="fas fa-check-circle"></i> <span data-i18n="home.benefit4">Improved digestion and sleep</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <div class="info-card animate-slide-up">
+            <h3><i class="fas fa-heart-pulse"></i> <span data-i18n="home.benefitsCardTitle">Benefits of Balanced Nutrition</span></h3>
+            <p data-i18n="home.benefitsCardText">Balanced meals provide the right mix of macronutrients and micronutrients. Combining proteins, healthy fats, complex carbs, vitamins, and fiber keeps your metabolism steady and supports long-term wellness.</p>
+            <div class="stats-row">
+              <div class="stat-item"><span class="stat-num">40+</span><span data-i18n="home.statFood">Food Items</span></div>
+              <div class="stat-item"><span class="stat-num">9</span><span data-i18n="home.statPlans">Diet Plans</span></div>
+              <div class="stat-item"><span class="stat-num">6</span><span data-i18n="home.statWorkouts">Workouts</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Health Calculators -->
+  <section class="section-padding bg-alt" id="calculators">
+    <div class="container">
+      <h2 class="section-title text-center mb-5" data-i18n="home.calcTitle">Health Calculators</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="calc-card">
+            <h4><i class="fas fa-weight-scale"></i> <span data-i18n="home.bmiTitle">BMI Calculator</span></h4>
+            <input type="number" id="bmiHeight" class="form-control mb-2" data-i18n-placeholder="home.bmiHeight" placeholder="Height (m)" step="0.01" min="0.5" max="2.5">
+            <input type="number" id="bmiWeight" class="form-control mb-2" data-i18n-placeholder="home.bmiWeight" placeholder="Weight (kg)" step="0.1" min="20" max="300">
+            <button class="btn btn-primary-custom w-100" id="calcBmiBtn" data-i18n="home.calcBmi">Calculate BMI</button>
+            <p id="bmiResult" class="calc-result mt-3"></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="calc-card">
+            <h4><i class="fas fa-fire"></i> <span data-i18n="home.calorieTitle">Daily Calorie Needs</span></h4>
+            <select id="calGender" class="form-select mb-2">
+              <option value="male" data-i18n="home.male">Male</option>
+              <option value="female" data-i18n="home.female">Female</option>
+            </select>
+            <input type="number" id="calAge" class="form-control mb-2" data-i18n-placeholder="home.age" placeholder="Age" min="10" max="100">
+            <input type="number" id="calWeight" class="form-control mb-2" data-i18n-placeholder="home.weightKg" placeholder="Weight (kg)">
+            <input type="number" id="calHeight" class="form-control mb-2" data-i18n-placeholder="home.heightCm" placeholder="Height (cm)">
+            <select id="calActivity" class="form-select mb-2">
+              <option value="1.2" data-i18n="home.sedentary">Sedentary</option>
+              <option value="1.375" data-i18n="home.lightExercise">Light exercise</option>
+              <option value="1.55" data-i18n="home.moderateExercise">Moderate exercise</option>
+              <option value="1.725" data-i18n="home.heavyExercise">Heavy exercise</option>
+            </select>
+            <button class="btn btn-primary-custom w-100" id="calcCalorieBtn" data-i18n="home.calcCalories">Calculate Calories</button>
+            <p id="calorieResult" class="calc-result mt-3"></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="calc-card">
+            <h4><i class="fas fa-droplet"></i> <span data-i18n="home.waterTitle">Water Intake</span></h4>
+            <input type="number" id="waterWeight" class="form-control mb-2" data-i18n-placeholder="home.weightKg" placeholder="Weight (kg)">
+            <select id="waterActivity" class="form-select mb-2">
+              <option value="0" data-i18n="home.lowActivity">Low activity</option>
+              <option value="0.5" data-i18n="home.modActivity">Moderate activity</option>
+              <option value="1" data-i18n="home.highActivity">High activity</option>
+            </select>
+            <button class="btn btn-primary-custom w-100" id="calcWaterBtn" data-i18n="home.calcWater">Calculate Water</button>
+            <p id="waterResult" class="calc-result mt-3"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diet Categories -->
+  <section class="section-padding" id="nutrition-guide">
+    <div class="container">
+      <h2 class="section-title text-center mb-2" data-i18n="home.nutritionTitle">Nutrition Guide</h2>
+      <p class="text-center section-text mb-5" data-i18n="home.nutritionSubtitle">Explore food categories with detailed nutritional breakdowns</p>
+      <div id="dietCategories" class="row g-4"></div>
+    </div>
+  </section>
+
+  <!-- Notifications Panel -->
+  <section class="section-padding bg-alt">
+    <div class="container">
+      <h2 class="section-title text-center mb-4" data-i18n="home.remindersTitle">Smart Reminders</h2>
+      <div class="row g-3 justify-content-center">
+        <div class="col-md-4">
+          <div class="reminder-card" id="mealReminder">
+            <i class="fas fa-utensils"></i>
+            <h5 data-i18n="home.mealReminder">Meal Reminder</h5>
+            <p class="reminder-time" data-i18n="home.mealNext">Next: 12:30 PM</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="reminder-card" id="waterReminder">
+            <i class="fas fa-glass-water"></i>
+            <h5 data-i18n="home.waterReminder">Water Reminder</h5>
+            <p class="reminder-time" data-i18n="home.waterNow">Drink a glass now!</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="reminder-card" id="workoutReminder">
+            <i class="fas fa-dumbbell"></i>
+            <h5 data-i18n="home.workoutReminder">Workout Reminder</h5>
+            <p class="reminder-time" data-i18n="home.workoutScheduled">Scheduled: 6:00 PM</p>
+          </div>
+        </div>
+      </div>
+      <div id="notificationToast" class="notification-toast"></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section-padding" id="contact">
+    <div class="container">
+      <div class="contact-card text-center">
+        <h2 class="section-title" data-i18n="home.contactTitle">Contact Us</h2>
+        <p><i class="fas fa-envelope"></i> support@balance-plate.com</p>
+        <p><i class="fas fa-phone"></i> +1 (800) 555-NUTRI</p>
+        <p><i class="fas fa-location-dot"></i> 123 Wellness Street, Health City</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p data-i18n="footer.copy">&copy; 2026 Balance-Plate. Eat well, live well.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/diet-data.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/integrate-features.js"></script>
+</body>
+</html>

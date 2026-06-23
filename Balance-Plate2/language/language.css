@@ -1,0 +1,83 @@
+/* ========== Language switcher (navbar, top-right) ========== */
+
+.nutri-lang-wrap {
+  display: flex;
+  align-items: center;
+  margin-left: 0.25rem;
+}
+
+.nutri-lang-label {
+  font-size: 0.75rem;
+  color: inherit;
+  opacity: 0.85;
+  margin-right: 0.35rem;
+  white-space: nowrap;
+}
+
+.nutri-lang-select {
+  min-width: 7.5rem;
+  padding: 0.35rem 1.75rem 0.35rem 0.65rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgba(39, 174, 96, 0.45);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #1e8449;
+  cursor: pointer;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e8449' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+}
+
+.nutri-lang-select:hover,
+.nutri-lang-select:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.25);
+  outline: none;
+}
+
+[data-theme="dark"] .nutri-lang-select {
+  background-color: #243329;
+  color: #2ecc71;
+  border-color: #2d4a38;
+}
+
+/* Smooth text transition when language changes */
+body.nutri-lang-switching [data-i18n],
+body.nutri-lang-switching [data-i18n-placeholder] {
+  transition: opacity 0.2s ease;
+}
+
+/* Floating switcher when page has no navbar */
+.nutri-lang-floating {
+  position: fixed;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"] .nutri-lang-floating {
+  background: rgba(30, 42, 36, 0.95);
+}
+
+@media (max-width: 991px) {
+  .nutri-lang-wrap {
+    width: 100%;
+    padding: 0.5rem 0;
+    justify-content: flex-end;
+  }
+
+  .nutri-lang-select {
+    width: 100%;
+    max-width: 200px;
+  }
+}

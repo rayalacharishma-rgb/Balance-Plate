@@ -1,0 +1,34 @@
+<!-- NutriBot static chatbot widget (loaded by chatbot.js) -->
+<div id="nutribot-root" class="nutribot-root" aria-live="polite">
+  <button type="button" id="nutribot-toggle" class="nutribot-fab" aria-label="Open NutriBot chat" title="NutriBot">
+    <i class="fas fa-robot"></i>
+    <span class="nutribot-fab-label" data-i18n="chatbot.fabLabel">NutriBot</span>
+  </button>
+
+  <div id="nutribot-panel" class="nutribot-panel nutribot-panel--hidden" role="dialog" aria-labelledby="nutribot-title">
+    <header class="nutribot-header">
+      <div class="nutribot-header-info">
+        <span class="nutribot-avatar"><i class="fas fa-leaf"></i></span>
+        <div>
+          <h2 id="nutribot-title" data-i18n="chatbot.title">NutriBot</h2>
+          <p class="nutribot-status" data-i18n="chatbot.status">Online</p>
+        </div>
+      </div>
+      <div class="nutribot-header-actions">
+        <button type="button" id="nutribot-minimize" class="nutribot-icon-btn" aria-label="Minimize chat" title="Minimize">
+          <i class="fas fa-minus"></i>
+        </button>
+        <button type="button" id="nutribot-close" class="nutribot-icon-btn" aria-label="Close chat" title="Close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </header>
+
+    <div id="nutribot-messages" class="nutribot-messages"></div>
+
+    <div class="nutribot-questions-wrap">
+      <p class="nutribot-questions-label" data-i18n="chatbot.pickQuestion">Choose a question:</p>
+      <div id="nutribot-questions" class="nutribot-questions"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Balance-Plate</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="admin">
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html"><i class="fas fa-leaf"></i> Balance-Plate</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="dietplans.html">Diet Plans</a></li>
+          <li class="nav-item"><a class="nav-link active" href="admin.html">Admin</a></li>
+          <li class="nav-item"><button class="btn btn-theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main class="section-padding">
+    <div class="container">
+      <h1 class="section-title mb-4">Admin Dashboard</h1>
+      <div class="dashboard-card mb-4">
+        <h5><i class="fas fa-gauge"></i> Overview</h5>
+        <div class="dashboard-stats" id="adminSummary">Loading...</div>
+        <div class="mt-3 d-flex gap-2 flex-wrap">
+          <a class="btn btn-outline-custom" href="/api/admin/export/users.csv">Export Users</a>
+          <a class="btn btn-outline-custom" href="/api/admin/export/diet-history.csv">Export Diet History</a>
+          <a class="btn btn-outline-custom" href="/api/admin/workbook">Download Excel Workbook</a>
+        </div>
+      </div>
+      <div class="dashboard-card mb-4">
+        <h5><i class="fas fa-users"></i> Users & Registrations</h5>
+        <div class="table-responsive"><table class="table nutrition-table"><thead><tr><th>Name</th><th>Email</th><th>Mobile</th><th>Health Conditions</th><th>Registered</th></tr></thead><tbody id="adminUsers"></tbody></table></div>
+      </div>
+      <div class="dashboard-card">
+        <h5><i class="fas fa-clock-rotate-left"></i> Login Activity</h5>
+        <div class="table-responsive"><table class="table nutrition-table"><thead><tr><th>User</th><th>Login Time</th><th>Status</th></tr></thead><tbody id="adminActivity"></tbody></table></div>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="container text-center"><p>&copy; 2026 Balance-Plate</p></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/diet-data.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/integrate-features.js"></script>
+</body>
+</html>

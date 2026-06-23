@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Balance-Plate</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="register">
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html"><i class="fas fa-leaf"></i> <span data-i18n="nav.brandAlt">Balance-Plate</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav.home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="dietplans.html" data-i18n="nav.dietPlans">Diet Plans</a></li>
+          <li class="nav-item"><a class="nav-link" href="workout.html" data-i18n="nav.workout">Workout Tracker</a></li>
+          <li class="nav-item"><a class="nav-link active" href="register.html" data-i18n="nav.register">Register</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html" data-i18n="nav.login">Login</a></li>
+          <li class="nav-item">
+            <button class="btn btn-theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="auth-page">
+    <div class="container">
+      <div class="auth-card animate-fade-in">
+        <h2><i class="fas fa-user-plus"></i> <span data-i18n="register.title">Create Account</span></h2>
+        <p class="text-muted" data-i18n="register.subtitle">Join Balance-Plate for personalized nutrition plans</p>
+        <form id="registerForm" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label" data-i18n="register.username">Full Name</label>
+              <input type="text" class="form-control" id="username" name="username" required>
+              <div class="invalid-feedback" id="usernameError"></div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" data-i18n="register.email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+              <div class="invalid-feedback" id="emailError"></div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="10-digit number" required>
+              <div class="invalid-feedback" id="phoneError"></div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" data-i18n="register.gender">Gender</label>
+              <select class="form-select" id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="male" data-i18n="register.male">Male</option>
+                <option value="female" data-i18n="register.female">Female</option>
+                <option value="other" data-i18n="register.other">Other</option>
+              </select>
+              <div class="invalid-feedback" id="genderError"></div>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label" data-i18n="register.password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+              <div class="invalid-feedback" id="passwordError"></div>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label" data-i18n="register.confirmPassword">Re-enter Password</label>
+              <input type="password" class="form-control" id="confirmPassword" required>
+              <div class="invalid-feedback" id="confirmPasswordError"></div>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label" data-i18n="register.age">Age</label>
+              <input type="number" class="form-control" id="age" name="age" min="10" max="120" required>
+              <div class="invalid-feedback" id="ageError"></div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Height (meters)</label>
+              <input type="number" class="form-control" id="height" name="height" step="0.01" min="0.5" max="2.5" required>
+              <div class="invalid-feedback" id="heightError"></div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" data-i18n="register.weight">Weight (kg)</label>
+              <input type="number" class="form-control" id="weight" name="weight" step="0.1" min="20" max="300" required>
+              <div class="invalid-feedback" id="weightError"></div>
+            </div>
+          </div>
+          <div class="password-hints mt-2">
+            <small>Password must have 8+ characters, uppercase, lowercase, number, and special character.</small>
+          </div>
+          <button type="submit" class="btn btn-primary-custom w-100 mt-4" data-i18n="register.submit">Register</button>
+        </form>
+        <p class="mt-3 text-center"><span data-i18n="register.haveAccount">Already have an account?</span> <a href="login.html" data-i18n="register.loginLink">Login here</a></p>
+        <div id="registerSuccess" class="alert alert-success mt-3 d-none"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container text-center"><p data-i18n="footer.copyShort">&copy; 2026 Balance-Plate</p></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/diet-data.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/integrate-features.js"></script>
+</body>
+</html>
